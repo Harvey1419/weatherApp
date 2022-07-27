@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="weather.css" />
+    <script src="weather.js"></script>
+  </head>
+  <body>
+    <section class="container">
+      <section class="separator">
+        <h1 class="title">Weather APP</h1>
+        <form>
+          <input type="button" value="City" id="cityButton" class="btn" />
+          <input type="button" value="ZipCode" id="zipCodeButton" class="btn"/>
+          <br /><br />
+          <input
+            type="text"
+            class="cityInput cityInputDisabled"
+            placeholder="Enter City..."
+          />
+          <input
+            type="text"
+            class="zipInput zipInputDisabled"
+            placeholder="Enter ZipCode... -> 680002,CO"
+          />
+          <br />
+          <h3 id="error-msg"></h3>
+          <button class="btn"><span>Ingresar</span></button>
+        </form>
+      </section>
+      <section class="separator">
+        <section id="weatherCard"></section>
+      </section>
+    </section>
+    <section class="container">
+      <section class="city-container">
+        <h4 id="advTitle"></h4>
+        <ul class="city-list">
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
