@@ -125,7 +125,7 @@ const lea = () => {
       const nameCity = element
         .querySelector(".name-city")
         ?.innerHTML.split("<")[0];
-      const inputWeather = element.querySelector('.inputWeather').value
+      const inputWeather = element.querySelector(".inputWeather").value;
       const lea = await apiCallCity(nameCity);
       const { main, name, weather } = lea;
       element.innerHTML = html(main, name, weather, "remove", inputWeather);
@@ -153,26 +153,24 @@ function html(main, name, weather, textBtn, inputWeather) {
     let buttonFunction;
     let weatherInput;
     let weatherAlert;
-    const inputWeatherRound = Math.round(inputWeather)
+    const inputWeatherRound = Math.round(inputWeather);
     if (textBtn === "remove") {
       classForButton = "remove-button";
       buttonFunction = `removeFavlistItem('${name}')`;
-      if(inputWeather == undefined || inputWeather == '') inputWeather = '';
-      if(weatherAlert === undefined) weatherAlert = '';
-      if(inputWeather >= Math.round(main.temp)){
-        weatherAlert = 'Temp Alert!'
+      if (inputWeather == undefined || inputWeather == "") inputWeather = "";
+      if (weatherAlert === undefined) weatherAlert = "";
+      if (inputWeather >= Math.round(main.temp)) {
+        weatherAlert = "Temp Alert!";
       }
       weatherInput = `
       <p id="weatherP">Weather Alert at: ${inputWeather}</p>
       <input class="inputWeather" type="text" id="inputWeather" value="${inputWeather}">
       <div class="weatherAlert">${weatherAlert}</div>
       `;
-
-     
     } else {
       classForButton = "fav-button";
       buttonFunction = "";
-      weatherInput = ''
+      weatherInput = "";
     }
 
     const icon = `http://openweathermap.org/img/w/${weather[0]?.icon}.png`;
